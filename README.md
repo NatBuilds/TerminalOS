@@ -41,7 +41,7 @@ python run.py
 
 ### Requirements
 
-- Python 3.11+
+- Python 3.12+
 - `colorama>=0.4.6` - Colored terminal output
 - `requests>=2.31.0` - HTTP requests
 - `opencv-python>=4.10.0.84` - Image processing (optional)

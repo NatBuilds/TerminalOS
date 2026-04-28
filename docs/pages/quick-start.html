@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quick Start guide for TerminalOS" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>TerminalOS | Quick Start</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <div class="site-brand-mark">TO</div>
+        <div>
+          <h1>TerminalOS</h1>
+          <p>Quick Start</p>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="quick-start.html">Quick Start</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="development.html">Development</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Get Started in 5 Minutes</h2>
+        <span>Install, run, and explore</span>
+      </div>
+      <p>TerminalOS is designed to launch quickly and reload modules automatically. Follow these steps to get up and running.</p>
+            <pre><code># Clone
+            git clone https://github.com/NatBuilds/TerminalOS.git
+cd TerminalOS
+
+# Virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Dependencies
+pip install -r requirements.txt
+
+# Run
+python run.py</code></pre>
+      <p>If you see the menu, the app is ready.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Your First Module</h2>
+        <span>Auto-discovered on next menu render</span>
+      </div>
+      <pre><code>from app.core import status
+
+def greet() -> None:
+    status.success("Hello, World!")
+
+def register(menu) -> None:
+    menu.add("Say Hello", greet)</code></pre>
+      <p>Create <code>app/modules/helloworld/controller.py</code>, save it, and select the module in TerminalOS. No restart required.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Optional Android ADB Setup</h2>
+        <span>For device automation</span>
+      </div>
+      <ul>
+        <li>Install Android Platform Tools (ADB)</li>
+        <li>Enable USB debugging on your device</li>
+        <li>Connect the device and accept the prompt</li>
+        <li>Open <strong>Device Tools</strong> in TerminalOS</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Troubleshooting</h2>
+        <span>Common fixes</span>
+      </div>
+      <ul>
+        <li><strong>Missing packages:</strong> run <code>pip install -r requirements.txt</code> again</li>
+        <li><strong>Module not shown:</strong> ensure <code>controller.py</code> exports <code>register(menu)</code></li>
+        <li><strong>ADB missing:</strong> install Android Platform Tools and restart the terminal</li>
+        <li><strong>No debug output:</strong> enable Verbose mode in Settings</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><a href="architecture.html">Next: Architecture →</a></p>
+      <p><a href="../index.html">Back to Home</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+

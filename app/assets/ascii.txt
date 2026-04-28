@@ -8,4 +8,3 @@
    ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░    ░░░░░░░     ░░░░░░░░░
 
                            A Terminal based Python modular CLI application
-

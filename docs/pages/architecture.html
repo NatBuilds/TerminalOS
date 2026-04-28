@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Architecture guide for TerminalOS" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>TerminalOS | Architecture</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <div class="site-brand-mark">TO</div>
+        <div>
+          <h1>TerminalOS</h1>
+          <p>Architecture</p>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="quick-start.html">Quick Start</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="development.html">Development</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Core Principles</h2>
+        <span>Modular by design</span>
+      </div>
+      <div class="features">
+        <div class="feature-box"><h3>Modular</h3><p>Each feature lives in its own module.</p></div>
+        <div class="feature-box"><h3>Discoverable</h3><p>Modules are found automatically at runtime.</p></div>
+        <div class="feature-box"><h3>Reloadable</h3><p>Changes appear on the next menu render.</p></div>
+        <div class="feature-box"><h3>Separated</h3><p>UI, config, and business logic stay isolated.</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Module Discovery Contract</h2>
+        <span>Controller-driven registration</span>
+      </div>
+      <ol>
+        <li>Create <code>app/modules/&lt;name&gt;/controller.py</code></li>
+        <li>Export <code>register(menu) -&gt; None</code></li>
+        <li>Add menu items with <code>menu.add("Label", handler)</code></li>
+        <li>Use no-arg callables as handlers</li>
+        <li>Let the runtime scan and reload on each loop</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Layer Architecture</h2>
+        <span>Clean separation of concerns</span>
+      </div>
+      <div class="features">
+        <div class="feature-box"><h3>Presentation</h3><p><code>app/core/menu.py</code>, <code>ui.py</code>, <code>status.py</code></p></div>
+        <div class="feature-box"><h3>Configuration</h3><p><code>config.py</code> and <code>cron_runtime.py</code></p></div>
+        <div class="feature-box"><h3>Business Logic</h3><p><code>app/modules/*/service.py</code></p></div>
+        <div class="feature-box"><h3>Shared Libraries</h3><p><code>app/libraries/*/</code> integrations and utilities</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Runtime Flow</h2>
+        <span>From launch to live reload</span>
+      </div>
+      <pre><code>run.py -> app.main.main()
+  -> scan app/modules/*/controller.py
+  -> import modules and call register(menu)
+  -> render menu and execute selected handler
+  -> loop repeats and picks up changes</code></pre>
+      <p>This loop is what makes TerminalOS ideal for rapid iteration.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Included Libraries</h2>
+        <span>Reusable tooling</span>
+      </div>
+      <ul>
+        <li><strong>ADB Controller</strong> — Android device automation</li>
+        <li><strong>OpenCV</strong> — Image processing and analysis</li>
+        <li><strong>OCR</strong> — Tesseract-powered text extraction</li>
+        <li><strong>Logging</strong> — Session logging and diagnostics</li>
+        <li><strong>Cron</strong> — Task scheduling and execution</li>
+        <li><strong>Text / Files</strong> — String and file utilities</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><a href="api-reference.html">Next: API Reference →</a></p>
+      <p><a href="../index.html">Back to Home</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+

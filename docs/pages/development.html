@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Development guide for TerminalOS" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>TerminalOS | Development</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <div class="site-brand-mark">TO</div>
+        <div>
+          <h1>TerminalOS</h1>
+          <p>Development</p>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="quick-start.html">Quick Start</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="development.html">Development</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Create a New Module</h2><span>Thin controllers, smart services</span></div>
+      <pre><code># app/modules/mymodule/controller.py
+from app.core import status
+
+def my_action() -> None:
+    status.success("Action executed!")
+
+def register(menu) -> None:
+    menu.add("My Action", my_action)</code></pre>
+      <p>Keep controllers small and move complex logic into a local <code>service.py</code> file.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Recommended Patterns</h2><span>Build clean, reusable modules</span></div>
+      <div class="features">
+        <div class="feature-box"><h3>Service Layer</h3><p>Put processing logic in a dedicated service module.</p></div>
+        <div class="feature-box"><h3>Submenus</h3><p>Use nested menus for related actions and workflows.</p></div>
+        <div class="feature-box"><h3>Config Driven</h3><p>Read user settings from <code>app/config.json</code>.</p></div>
+        <div class="feature-box"><h3>Library Reuse</h3><p>Use shared libraries instead of duplicating code.</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Error Handling</h2><span>Keep the CLI stable</span></div>
+      <pre><code>try:
+    result = risky_operation()
+    status.success(f"Done: {result}")
+except Exception as exc:
+    status.error(f"Unexpected error: {exc}")</code></pre>
+      <p>Prefer clear status messages over raw exceptions so the menu stays usable.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Testing Tips</h2><span>Fast validation loop</span></div>
+      <ol>
+        <li>Create or edit your module.</li>
+        <li>Run <code>python run.py</code>.</li>
+        <li>Open your module from the menu.</li>
+        <li>Edit code and select the menu item again to confirm live reload.</li>
+        <li>Check logs if something fails.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><h2>Best Practices</h2><span>Keep modules maintainable</span></div>
+      <ul>
+        <li>Keep controllers thin.</li>
+        <li>Use <code>status.*</code> for all user feedback.</li>
+        <li>Handle exceptions gracefully.</li>
+        <li>Prefer no-arg callables for menu handlers.</li>
+        <li>Document your module with examples.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><a href="../index.html">Back to Home</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+

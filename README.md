@@ -3,9 +3,17 @@
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A production-ready backbone for building modular Python CLI applications. Discover feature modules at runtime, reload code without restarting, and integrate Android device automation via ADB.
+A modular automation OS for building and running tools, workflows, and AI systems in your terminal.
 
 ![MainImage.png](Logos/MainImage.png)
+
+## 🚀 Build With It
+
+TerminalOS is designed to be extended.
+
+Fork it. Add modules. Build tools. Automate something.
+
+👉 This is your terminal. Make it do what you want.
 
 ## Key Features
 

@@ -3,9 +3,11 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
+      - main
       - master
   pull_request:
     branches:
+      - main
       - master
 
 permissions:
@@ -24,23 +26,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs
-          destination: ./_site
+      - name: Stage static site
+        run: |
+          mkdir -p site/pages site/assets
+          cp docs/index.html site/
+          cp docs/404.html site/
+          cp docs/.nojekyll site/
+          cp docs/assets/style.css site/assets/
+          cp docs/pages/*.html site/pages/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
 
   deploy:
     environment:

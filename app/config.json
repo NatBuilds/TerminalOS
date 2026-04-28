@@ -26,8 +26,8 @@
       "expression": "*/5 * * * *",
       "command": "task:adb_screenshot_and_read",
       "enabled": true,
-      "last_run": "2026-04-28T12:20:09.056653",
-      "next_run": "2026-04-28T12:25:00"
+      "last_run": "2026-04-28T15:55:01.663412",
+      "next_run": "2026-04-28T16:00:00"
     }
   ]
 }

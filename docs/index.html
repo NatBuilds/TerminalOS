@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TerminalOS - Modular automation OS for your terminal" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>TerminalOS | Automate • Extend • Control</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container page-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <div class="site-brand-mark">TO</div>
+        <div>
+          <h1>TerminalOS</h1>
+          <p>Automate • Extend • Control</p>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/quick-start.html">Quick Start</a></li>
+          <li><a href="pages/architecture.html">Architecture</a></li>
+          <li><a href="pages/api-reference.html">API Reference</a></li>
+          <li><a href="pages/development.html">Development</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">A modular automation OS for your terminal</div>
+          <h1>Build, run, and automate anything from a single reloadable CLI platform.</h1>
+          <p class="hero-tagline">TerminalOS turns your terminal into a modular control surface for automation, device management, OCR, cron jobs, and local AI workflows.</p>
+          <p class="hero-desc">Drop in feature modules, reload code instantly, and control Android devices with ADB. The entire experience is built around a futuristic dark theme inspired by the project’s main visual identity.</p>
+          <div class="cta-row">
+            <a class="btn" href="pages/quick-start.html">Get Started</a>
+            <a class="btn" href="pages/architecture.html">View Architecture</a>
+          </div>
+        </div>
+        <div class="terminal-frame">
+          <img class="hero-art" src="https://raw.githubusercontent.com/NatBuilds/TerminalOS/master/Logos/MainImage.png" alt="TerminalOS banner" />
+        </div>
+      </div>
+    </section>
+
+    <div class="metric-grid">
+      <div class="metric-card"><strong>5</strong><span>Included modules</span></div>
+      <div class="metric-card"><strong>30+</strong><span>ADB automation methods</span></div>
+      <div class="metric-card"><strong>70+</strong><span>Total API methods</span></div>
+      <div class="metric-card"><strong>100+</strong><span>Code examples</span></div>
+    </div>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Core Capabilities</h2>
+        <span>Designed for automation</span>
+      </div>
+      <div class="features">
+        <div class="feature-box">
+          <h3>🤖 Android Automation</h3>
+          <p>ADB control for tap, swipe, text input, screenshots, and app management.</p>
+        </div>
+        <div class="feature-box">
+          <h3>📸 Screenshot Analysis</h3>
+          <p>Combine OpenCV and OCR for visual inspection and text extraction workflows.</p>
+        </div>
+        <div class="feature-box">
+          <h3>🧠 AI Integration</h3>
+          <p>Use local LLM support for context-aware terminal workflows and automation.</p>
+        </div>
+        <div class="feature-box">
+          <h3>⏰ Cron Scheduler</h3>
+          <p>Schedule recurring tasks and jobs with cron-style automation rules.</p>
+        </div>
+        <div class="feature-box">
+          <h3>📋 Logging & Diagnostics</h3>
+          <p>Automatic session logs, diagnostics, and structured status output.</p>
+        </div>
+        <div class="feature-box">
+          <h3>🔌 Dynamic Modules</h3>
+          <p>Discover and reload module controllers without restarting the app.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Why TerminalOS?</h2>
+        <span>Fast, modular, extensible</span>
+      </div>
+      <div class="features">
+        <div class="feature-box">
+          <h3>Clean Architecture</h3>
+          <p>Controllers stay thin while business logic lives in services and libraries.</p>
+        </div>
+        <div class="feature-box">
+          <h3>Live Reload</h3>
+          <p>Edit code, return to the menu, and see changes immediately.</p>
+        </div>
+        <div class="feature-box">
+          <h3>Production Ready</h3>
+          <p>Centralized status logging, config management, and resilient error handling.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Quick Start</h2>
+        <span>Up and running in minutes</span>
+      </div>
+      <pre><code># Clone the repository
+git clone https://github.com/NatBuilds/TerminalOS.git
+cd TerminalOS
+
+# Create a virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1   # Windows
+
+# Install dependencies and run
+pip install -r requirements.txt
+python run.py</code></pre>
+      <p>Create your first module by adding a <code>controller.py</code> file under <code>app/modules/&lt;name&gt;/</code> and exporting a <code>register(menu)</code> function.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Documentation</h2>
+        <span>Explore the full guide set</span>
+      </div>
+      <ul>
+        <li><a href="pages/quick-start.html">Quick Start</a> — installation and first module</li>
+        <li><a href="pages/architecture.html">Architecture</a> — module system and structure</li>
+        <li><a href="pages/api-reference.html">API Reference</a> — all core libraries and workflows</li>
+        <li><a href="pages/development.html">Development</a> — building new features</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>TerminalOS — Automate • Extend • Control</p>
+      <p><a href="https://github.com/NatBuilds/TerminalOS">View on GitHub</a> · <a href="pages/quick-start.html">Documentation</a></p>
+    </footer>
+  </div>
+</body>
+</html>
+

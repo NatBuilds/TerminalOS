@@ -1,0 +1,33 @@
+{
+  "verbose": false,
+  "llm": {
+    "provider": "lmstudio",
+    "base_url": "http://127.0.0.1:1234/v1",
+    "chat_endpoint": "/chat/completions",
+    "model": "local-model",
+    "api_key": "not-needed",
+    "timeout": 60
+  },
+  "adb": {
+    "adb_executable": "adb",
+    "device_serial": "",
+    "timeout": 30
+  },
+  "ocr": {
+    "tesseract_cmd": "tesseract",
+    "language": "eng",
+    "psm": 3,
+    "oem": 3,
+    "timeout": 30
+  },
+  "cron_tasks": [
+    {
+      "name": "Screenshot Analysis Every 5 Minutes",
+      "expression": "*/5 * * * *",
+      "command": "task:adb_screenshot_and_read",
+      "enabled": true,
+      "last_run": "2026-04-28T12:20:09.056653",
+      "next_run": "2026-04-28T12:25:00"
+    }
+  ]
+}

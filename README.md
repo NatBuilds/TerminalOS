@@ -107,6 +107,14 @@ Navigate through the menu to:
 - **cron_scheduler** - Task scheduling interface
 - **logs** - Log management and search
 
+## 🚧 Coming Soon
+
+Planned areas of expansion, with no specific release order:
+
+- ComfyUI local image generation
+- Local AI integrations: Ollama, LM Studio, any OpenAI endpoint, OpenRouter
+- Other connections
+
 ## Configuration
 
 Config file: `app/config.json` (auto-created with sensible defaults)

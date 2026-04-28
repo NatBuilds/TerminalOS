@@ -5,6 +5,8 @@
 
 A production-ready backbone for building modular Python CLI applications. Discover feature modules at runtime, reload code without restarting, and integrate Android device automation via ADB.
 
+![MainImage.png](Logos/MainImage.png)
+
 ## Key Features
 
 - **🔌 Dynamic Module Discovery**: Drop new modules into `app/modules/*/controller.py` and they load automatically

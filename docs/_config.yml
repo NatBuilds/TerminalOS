@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: TerminalOS
 description: Modular Terminal CLI Framework for Python
-logo: https://via.placeholder.com/200?text=TerminalOS
+logo: https://github.com/NatBuilds/TerminalOS/blob/master/Logos/MainImage.png
 show_downloads: true
 github:
   repository_url: https://github.com/NatBuilds/TerminalOS

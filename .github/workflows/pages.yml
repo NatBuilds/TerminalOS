@@ -3,11 +3,9 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
       - master
   pull_request:
     branches:
-      - main
       - master
 
 permissions:
